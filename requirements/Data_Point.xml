@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE spec SYSTEM "http://www.cs.stolaf.edu/lib/SpecML/SpecML.dtd">
+<?xml-stylesheet
+   href="http://www.cs.stolaf.edu/lib/SpecML/SpecMLToHTML.xsl"
+   type="text/xsl"?>
+
+<spec>
+<title>The Data_Point Struct Specification</title>
+<header>This struct models the year and value of the event.  </header>
+<credits>Diyang Yu, Tue., December 1, 2015</credits>
+
+<class name="Data_Point" visibility="public">
+
+<nosuperclass/>
+
+<variables>
+<var name="year" type="int" visibility="protected">The year of the event happened. </var>
+<var name="data_value" type="double" visibility="protected">The value of the data. </var>
+</variables>
+
+
+<nomethods/>
+
+
+</class>
+
+</spec>

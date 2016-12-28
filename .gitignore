@@ -1,0 +1,32 @@
+# OS-specific files
+Thumbs.db
+.DS_Store
+.nfs*
+
+# Compiled and object files
+*.out
+*.o
+
+# Temporary files
+*~
+\#*\#
+
+# Images
+*.pbm
+*.ppm
+*.pam
+*.jpg
+*.jpeg
+*.tiff
+*.png
+*.gif
+*.webp
+
+# Audio
+*.wav
+*.raw
+*.mp3
+*.aac
+*.m4a
+
+*.txt

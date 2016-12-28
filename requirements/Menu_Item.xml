@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE spec SYSTEM "http://www.cs.stolaf.edu/lib/SpecML/SpecML.dtd">
+<?xml-stylesheet
+   href="http://www.cs.stolaf.edu/lib/SpecML/SpecMLToHTML.xsl"
+   type="text/xsl"?>
+
+<spec>
+<title>Menu Item Class Specification</title>
+<header>This class represents an item within the menu.  Methods allow the user to create an item or alter an existing item.</header>
+<credits>Maria Handzel. Due 2. December 2015.</credits>
+
+<class name="Menu_Item">
+
+<nosuperclass/>
+
+<variables>
+<var name="value" type="int">The ID number for the menu item object.</var>
+<var name="label" type="char *">A pointer to a char array that labels the menu item object.</var>
+</variables>
+
+<constructors-list>
+
+<constructor>
+<desc>Normal constructor</desc>
+<arguments>
+<arg name="val" type="int">The ID number to be assigned to the menu item.</arg>
+<arg name="lab" type="char *">The label to be assigned ot the menu item.</arg>
+</arguments>
+<statechange>A new menu item is created and initialized with the given value and label.</statechange>
+</constructor>
+
+<constructor>
+<desc>Default constructor</desc>
+<noarguments></noarguments>
+<statechange>A new menu item is created with no value or label.</statechange>
+</constructor>
+
+</constructors-list>
+
+<methods-list>
+
+<method name="get_val" returntype="int">
+<desc></desc>
+<noarguments></noarguments>
+<statechange>None.</statechange>
+<return>This method returns the value of the given menu item.</return>
+</method>
+
+<method name="get_label" returntype="char *">
+<desc></desc>
+<noarguments></noarguments>
+<statechange>None.</statechange>
+<return>This method returns the char * label belonging to the menu item.</return>
+</method>
+
+<method name="set_value" returntype="void">
+<desc></desc>
+<arguments>
+<arg name="val" type="int">The new value for the menu item.</arg>
+</arguments>
+<statechange>The menu item value becomes the given value.</statechange>
+<return>None.</return>
+</method>
+
+<method name="set_label" returntype="void">
+<desc></desc>
+<arguments>
+<arg name="lab" type="char *">The new label for the menu item.</arg>
+</arguments>
+<statechange>The menu item label becomes the given label.</statechange>
+<return>None.</return>
+</method>
+
+<method name="display" returntype="void">
+<desc>This method prints the value and label of the given menu item.</desc>
+<noarguments></noarguments>
+<statechange>None.</statechange>
+<return>None.</return>
+</method>
+  
+</methods-list>
+
+</class>
+
+</spec>

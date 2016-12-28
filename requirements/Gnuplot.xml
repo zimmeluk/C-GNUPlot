@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE spec SYSTEM "http://www.cs.stolaf.edu/lib/SpecML/SpecML.dtd">
+<?xml-stylesheet
+   href="http://www.cs.stolaf.edu/lib/SpecML/SpecMLToHTML.xsl"
+   type="text/xsl"?>
+
+<spec>
+<title>The Gnuplot Class Specificaiton</title>
+<header>Allows data to be plotted in Gnuplot from C++</header>
+<credits>Dan Stahlke</credits>
+
+<class name="Gnuplot" visibility="public">
+
+<nosuperclass/>
+
+<variables>
+<var name="gnucmd" type="FILE*" visibility="private" >a brief pointer to the stream that can be used to write to the pipe</var>
+<var name="valid" type="bool" visibility="private">brief validation of gnuplot session</var>
+<var name="two_dim" type="bool" visibility="private">true = 2d, false = 3d</var>
+<var name="nplots" type="int" visibility="private">brief number of plots in session</var>
+<var name="pstyle" type="string" visibility="private">brief functions and data are displayed in a defined style</var>
+<var name="smooth" type="string" visibility="private">interpolate and approximate data in defined styles</var>
+
+</variables>
+
+<constructors-list>
+
+<constructor>
+  <desc>Regular Constructor</desc>
+  
+<arguments>
+<arg name="filename" type="const string"></arg>
+<arg name="title" type="const string"></arg>
+<arg name="column_x" type="const unsigned int"></arg>
+<arg name="column_y" type="const unsigned int"></arg>
+<arg name="column_x" type="const unsigned int"></arg>
+</arguments>
+<statechange>The name of the file that contains the data to be plotted using Gnuplot is read into the progra. The tile of the graph is set, and the number of columns of data contained in the file in is also set.</statechange>
+</constructor>
+
+</constructors-list>
+
+<destructor>
+<desc></desc>
+<statechange>Any memory dynamically allocated for this instance of Gunplot is deallocated.  Also, all temporary files are deleted.</statechange>
+</destructor>
+
+<methods-list>
+
+<method name="reset_plot" returntype="Gnuplot &amp;">
+<desc>Resets a gnuplot session (next plot will erase all previous ones</desc>
+<arguments>
+  <arg name="void">No arguments</arg>
+</arguments>
+<statechange>the temporary files are removed by setting nplots to 0.</statechange>
+<return>a pointer to this instance of Gnuplot</return>
+</method>
+
+<method name="set_xlabel" returntype="Gnuplot &amp;">
+<desc>Sets the xlabel on a Gnuplot</desc>
+<arguments>
+  <arg name="label" type="const string &amp;">The name that is to be assigned to the xlabel.</arg>
+</arguments>
+<statechange>the xlabel is set using an instance of ostringstream.</statechange>
+<return>a pointer to this instance of Gnuplot</return>
+</method>
+
+<method name="set_ylabel" returntype="Gnuplot &amp;">
+<desc>Sets the ylabel on a Gnuplot</desc>
+<arguments>
+  <arg name="label" type="const string &amp;">The name that is to be assigned to the ylabel.</arg>
+</arguments>
+<statechange>the ylabel is set using an instance of ostringstream.</statechange>
+<return>a pointer to this instance of Gnuplot</return>
+</method>
+
+<method name="set_xrange" returntype="Gnuplot &amp;">
+<desc>Sets the xrange on a Gnuplot</desc>
+<arguments>
+  <arg name="iFrom" type="const double">The minimal value of the xrange</arg>
+  <arg name="iTo" type="const double">The maximal value of the xrange</arg>
+</arguments>
+<statechange>the xrange is set using an instance of ostringstream.</statechange>
+<return>a pointer to this instance of Gnuplot</return>
+</method>
+
+<method name="set_pointsize" returntype="Gnuplot &amp;">
+<desc>Sets the pointsize on a Gnuplot</desc>
+<arguments>
+  <arg name="pointsize" type="const double">the size of the points on a Gnuplot are set</arg>
+</arguments>
+<statechange>the size of the points are given a default size of 1.0.</statechange>
+<return>a pointer to this instance of Gnuplot</return>
+</method>
+
+<method name="set_style" returntype="Gnuplot &amp;">
+<desc>Sets the line style to either lines, points, linespoints, impulses, dots, steps, fsteps, histeps, boxes, histograms, or filledcurves</desc>
+<arguments>
+  <arg name="stylestr" type="const string &amp;">the type of line style that Gnuplot will use when graphing a dataset</arg>
+</arguments>
+<statechange>stylestr now holds the plotting style of a Gnuplot session.</statechange>
+<return>a pointer to this instance of Gnuplot</return>
+</method>
+
+
+<method name="plotfile_xy" returntype="Gnuplot &amp;">
+<desc>Plots a 2D graph from a list of double (x y) saved in a file</desc>
+<arguments>
+  <arg name="filename" type="const string &amp;">the name of the file containing the data to be plotted</arg>
+  <arg name="column_x" type="const unsigned int"></arg>
+  <arg name="column_y" type="const unsigned int"></arg>
+  <arg name="title" type="const string &amp;">the tile of the graph</arg>
+</arguments>
+<statechange>Gnuplot plots the data points from a filename and displays a graph</statechange>
+<return>a pointer to this instance of Gnuplot</return>
+</method>
+
+  
+<method name="plotfile_xyz" returntype="Gnuplot &amp;">
+<desc>Plots a graph from a list of double (x y dy) saved in a file</desc>
+<arguments>
+  <arg name="filename" type="const string &amp;">the name of the file containing the data to be plotted</arg>
+  <arg name="column_x" type="const unsigned int"></arg>
+  <arg name="column_y" type="const unsigned int"></arg>
+  <arg name="column_dy" type="const unsigned int"></arg>
+  <arg name="title" type="const string &amp;">the title of the graph</arg>
+</arguments>
+<statechange>Gnuplot plots the data points from a filename and displays a graph</statechange>
+<return>a pointer to this instance of Gnuplot</return>
+</method>
+
+</methods-list>
+
+</class>
+
+</spec>

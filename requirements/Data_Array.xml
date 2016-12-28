@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE spec SYSTEM "http://www.cs.stolaf.edu/lib/SpecML/SpecML.dtd">
+<?xml-stylesheet
+   href="http://www.cs.stolaf.edu/lib/SpecML/SpecMLToHTML.xsl"
+   type="text/xsl"?>
+
+<spec>
+<title>The Data_Array Class Specification</title>
+<header>This class represents an array of Data_point objects. </header>
+<credits>Diyang Yu, Tue., December 1, 2015</credits>
+
+<class name="Data_Array" visibility="public">
+
+<nosuperclass/>
+
+<variables>
+  <var name="W" type="Data_Point**">Array of pointer to Data_Point.</var>
+  <var name="size" type="int">Non_negative integer, number of Data_Point pointers in the array. </var>
+  <var name="DEFAULT_SIZE" type="int" visibility="public">Positive integer. </var>
+</variables>
+
+
+<constructors-list>
+  <constructor visibility="public">
+    <desc>Regular constructor.</desc>
+    <arguments>
+      <arg name="sz" type="unsigned int">Positive integer.</arg>
+    </arguments>
+    <statechange>The state variables are initialized (using dynamic memory) so that we have sz elements in the array. Note: the initial value of these pointers should be zero, to indicate that they don't point anywhere yet.</statechange>
+  </constructor>
+
+  <constructor visibility="public">
+    <desc>Default constructor.</desc>
+    <noarguments/>
+    <statechange>The state variables are initialized using the DEFAULT_SIZE.</statechange>
+  </constructor>
+
+  <constructor visibility="public">
+    <desc>Copy constructor.</desc>
+    <arguments>
+      <arg name="dataarray" type="Data_Array &amp;"> An instance of Data_Array.</arg>
+    </arguments>
+    <statechange>The state variables are initialized so as to create a copy of the argument. Note: do not copy the contents of one pointer array directly into the other. Instead, create new Data_Point wherever they are needed, using the Data_Point copy constructor in conjunction with new.</statechange>
+  </constructor>
+
+</constructors-list>
+
+<destructor>
+<desc>Destructor.</desc>
+<statechange>The dynamically allocated memory is de-allocated. This includes both Data_Point (but not the individual components of the Data_Point) and the array of pointers to Data_Point.</statechange>
+</destructor>
+
+<methods-list>
+  <method name="display">
+    <desc>Displays the Data_Array </desc>
+    <noarguments/>
+    <statechange>The existing (non-zero) Data_Points in this array are displayed on cout, one on each line, with the index value followed by a colon followed by the Data_Point.  For example:
+   0: [1995 78]
+   1: [2013 60]
+    </statechange>
+    <return>This method has no return value.</return>
+  </method>
+
+  <method name="[]" returntype="Data_Point &amp;">
+    <desc>Returns the Data_Point indicated by the index.</desc>
+    <arguments>
+      <arg name="i" type="int">An integer, the index we want to get.</arg>
+    </arguments>
+    <statechange>None.</statechange>
+    <return>If i is an invalid array index, print a warning. If the array element indicated by i is zero, (dynamically) create a Data_Point and assign the address of that Data_Point to the array element. Regardless of whether you've just created it or not, return the Data_Point indicated by the i-th array element (as a reference, so that no temporary variable is created for the return).</return>
+  </method>
+
+</methods-list>
+
+</class>
+
+</spec>

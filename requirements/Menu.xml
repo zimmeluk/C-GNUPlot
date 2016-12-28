@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE spec SYSTEM "http://www.cs.stolaf.edu/lib/SpecML/SpecML.dtd">
+<?xml-stylesheet
+   href="http://www.cs.stolaf.edu/lib/SpecML/SpecMLToHTML.xsl"
+   type="text/xsl"?>
+
+<spec>
+<title>Menu Class Specification</title>
+<header>This class represents a menu, a collection of Menu_Item objects. Methods allow the user to create his/her own menu choices.</header>
+<credits>Rachel Frantsen. Due 2. December 2015.</credits>
+
+<class name="Menu">
+
+<nosuperclass/>
+
+<variables>
+<var name="Vec" type="Menu_Item**" visibility="public">An array of pointers to Menu_Item objects.</var>
+<var name="size" type="int" visibility="public">An integer representing the number of pointers in the array Vec.</var>
+<var name="count" type="int" visibility="public">An integer representing the number of objects that vec points to.</var>
+<var name="header" type="char*" visibility="public">C-style string representing the header to display above the menu (Menu_Item group).</var>
+<var name="prompt" type="char*" visibility="public">C-style string representing the smaller subheading providing the user with instructions and asking for action.</var>
+<var name="id" type="int" visibility="public">The unique identifier for this menu.</var>
+</variables>
+
+<constructors-list>
+
+<constructor visibility="public">
+<desc>Normal constructor.</desc>
+<arguments>
+<arg name="sz" type="int">The maximum number of Menu_Items to be used in this menu.</arg>
+<arg name="hdr" type="char*">C-style string for menu header.</arg>
+<arg name="prmt" type="char*">C-style string for menu prompt.</arg>
+</arguments>
+<statechange>A new Menu object is created.</statechange>
+</constructor>
+
+<constructor visibility="public">
+<desc>Default constructor.</desc>
+<noarguments></noarguments>
+<statechange>A new Menu object is created and initialized with 10 spaces for Menu_Items in Vec, but with none created yet.</statechange>
+</constructor>
+
+<constructor visibility="public">
+<desc>Normal constructor.</desc>
+<arguments>
+<arg name="mnu" type="const Menu *">Const menu object passed by reference.</arg>
+</arguments>
+<statechange>A new Menu object is created that is identical to the argument.</statechange>
+</constructor>
+
+</constructors-list>
+
+<destructor>
+<desc>~Menu</desc>
+<statechange>All dynamic memory is de-allocated before deleting the rest of the object.</statechange>
+</destructor>
+
+<methods-list>
+
+<method name="add_item" returntype="int">
+<desc></desc>
+<arguments>
+<arg name="" type="Interface">The Interface currently in use.</arg>
+</arguments>
+<statechange>The program dynamically allocates memory to a new Menu_Item object, creates that object, and assigns it a place in Vec.</statechange>
+<return>Return 1 if item has been added 0, if unable to add.</return>
+</method>
+
+<method name="get_value" returntype="int">
+<desc>Set the unique identifier for the Menu object.</desc>
+<arguments>
+<arg name="" type="Interface">The Interface currently in use.</arg>
+</arguments>
+<statechange>None.</statechange>
+<return>The unique identifier for the Menu object.</return>
+</method>
+
+<method name="set_value" returntype="void">
+<desc>Set the identifier for the Menu.</desc>
+<arguments>
+<arg name="ident" type="int">A number to use for the Menu identifier.</arg>
+</arguments>
+<statechange>ident is assigned to the variable id.</statechange>
+<return>None.</return>
+</method>
+
+<method name="set_label" returntype="void">
+<desc>Set the label for the Menu header.</desc>
+<arguments>
+<arg name="hdr" type="char*">A C-style string containing the header of the Menu.</arg>
+</arguments>
+<statechange>header gets the value of hdr.</statechange>
+<return>None.</return>
+</method>
+
+</methods-list>
+
+</class>
+
+</spec>
