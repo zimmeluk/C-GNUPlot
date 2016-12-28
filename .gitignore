@@ -11,17 +11,6 @@ Thumbs.db
 *~
 \#*\#
 
-# Images
-*.pbm
-*.ppm
-*.pam
-*.jpg
-*.jpeg
-*.tiff
-*.png
-*.gif
-*.webp
-
 # Audio
 *.wav
 *.raw
