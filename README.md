@@ -1,5 +1,4 @@
-                                  BIG DATA
-README
+# BIG DATA
 
   Big Data is a graphical user interface for Gnuplot that focuses specifially
   on the analysis of climate data. Using WebMapReduce, we have produced some
@@ -7,7 +6,7 @@ README
   Big Data by reading the User Manual.
 
 
-CONTACT
+### CONTACT
 
   If you have any questions or concerns, please contact any of the Big Data
   team members:
@@ -17,7 +16,7 @@ CONTACT
   Luke Zimmerman '18.......zimmer2@stolaf.edu
 
 
-INSTALLATION
+### INSTALLATION
 
   To unpack or extract the tar.gz file, type:
 
@@ -48,12 +47,12 @@ INSTALLATION
   We hope you enjoy using Big Data!
 
 
-WIKI
+### WIKI
 
      www.cs.stolaf.edu/wiki/index.php/BigData
 
 
-NOTICE
+### NOTICE
 
   We could not have complete this project without Gnuplot or the C++
   iostream interface written by Dan Stahlke. Dan's code can be found at:
