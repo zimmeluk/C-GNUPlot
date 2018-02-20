@@ -1,12 +1,12 @@
-# BIG DATA
-Big Data is a graphical user interface for Gnuplot that focuses specifially on the analysis of climate data. Using WebMapReduce, we have produced some data samples that come pre-packaged with the program.  Find out how to use Big Data by reading the User Manual.
+# CPPlot
+CPPlot is a graphical user interface for Gnuplot that focuses specifially on the analysis of climate data. Using WebMapReduce, we have produced some data samples that come pre-packaged with the program.  Find out how to use Big Data by reading the User Manual.
 
 ### CONTACT
 If you have any questions or concerns, please contact any of the Big Data team members:
-  * Rachel Frantsen '16......frantsen@stolaf.edu
-  * Maria Handzel '16........handzel@stolaf.edu
-  * Diyang Yu '17............yu@stolaf.edu
-  * Luke Zimmerman '18.......zimmer2@stolaf.edu
+  * [Rachel Frantsen '16](mailto:frantsen@stolaf.edu)
+  * [Maria Handzel '16](mailto:handzel@stolaf.edu)
+  * [Diyang Yu '17](mailto:yu@stolaf.edu)
+  * [Luke Zimmerman '18](mailto:zimmer2@stolaf.edu)
 
 
 ### INSTALLATION
@@ -44,4 +44,4 @@ We hope you enjoy using Big Data!
 To see the original project, go to [St. Olaf Computer Science Wiki](www.cs.stolaf.edu/wiki/index.php/BigData).
 
 ### NOTICE
-We could not have complete this project without Gnuplot or the ```C++ iostream``` interface written by Dan Stahlke. Dan's code can be found at [Dan's Website](www.stahlke.org/dan/gnuplot-iostream/) or [Google's Code Repsoitory](http://code.google.com/p/gnuplot-cpp/).
+We could not have complete this project without Gnuplot or the C++ ```iostream``` interface written by Dan Stahlke. Dan's code can be found at [Dan's Website](www.stahlke.org/dan/gnuplot-iostream/) or [Google's Code Repsoitory](http://code.google.com/p/gnuplot-cpp/).
