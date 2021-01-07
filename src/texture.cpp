@@ -4,7 +4,7 @@
 #include<vector>
 #include<map>
 using namespace std;
-#ifdef MACOSX
+#ifdef __APPLE__
 #include<GLUT/glut.h>
 #else
 #include<GL/glut.h>

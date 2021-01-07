@@ -11,7 +11,7 @@ using namespace std;
 #include <sstream>
 #include <cassert>
 #include <string>
-#ifdef MACOSX
+#ifdef __APPLE__
 #include <GLUT/glut.h>
 #else
 #include <GL/glut.h>
